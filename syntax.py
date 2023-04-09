@@ -98,9 +98,8 @@ class PythonHighlighter (QtGui.QSyntaxHighlighter):
             (r'"[^"\\]*(\\.[^"\\]*)*"', 0, STYLES['string']),
             # Single-quoted string, possibly containing escape sequences
             (r"'[^'\\]*(\\.[^'\\]*)*'", 0, STYLES['string']),
-
             # From '#' until a newline
-            (r'#[^\n]*', 0, STYLES['comment']),
+            (r'^#.*$', 0, STYLES['comment']),
         ]
 
         # Build a QRegExp for each pattern
